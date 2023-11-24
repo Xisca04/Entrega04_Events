@@ -22,4 +22,10 @@ public class EventsSFX : MonoBehaviour
     {
         particleSystem.Stop();
     }
+
+    public void OnEnableSFXEvents()
+    {
+        EventsGameManager.OnEnterKeyPressed += StartParticleSystem;
+        EventsGameManager.OnEscapeKeyPressed += StartParticleSystem;
+    }
 }

@@ -12,7 +12,8 @@ public class EventsGameManager : MonoBehaviour
 
     private void Update()
     {
-
+        EnterKeyClicked();
+        EscapeKeyClicked();
     }
 
     private void EnterKeyClicked()

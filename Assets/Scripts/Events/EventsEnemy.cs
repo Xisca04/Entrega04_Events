@@ -66,4 +66,10 @@ public class EventsEnemy : MonoBehaviour
     {
         canMove = true;
     }
+
+    public void OnEnableEnemyEvents()
+    {
+        EventsGameManager.OnEnterKeyPressed += StopMovement;
+        EventsGameManager.OnEscapeKeyPressed += RestartMovement;
+    }
 }
