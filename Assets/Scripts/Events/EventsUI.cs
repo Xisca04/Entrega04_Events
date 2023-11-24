@@ -13,6 +13,7 @@ public class EventsUI : MonoBehaviour
     private void Awake()
     {
         InitializeText();
+        OnEnableUIEvents();
     }
 
     private void InitializeText()

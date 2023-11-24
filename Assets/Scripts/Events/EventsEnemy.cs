@@ -24,6 +24,7 @@ public class EventsEnemy : MonoBehaviour
     {
         canMove = true;
         nextPosition = startPosition;
+        OnEnableEnemyEvents();
     }
 
     private void Update()

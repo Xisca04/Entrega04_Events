@@ -30,6 +30,7 @@ public class EventsPlayerController : MonoBehaviour
     private void Start()
     {
         enemy = FindObjectOfType<EventsEnemy>().gameObject.transform; // There is a unique enemy in the Scene
+        OnEnablePlayerEvents();
     }
 
     public float DistanceToEnemy()
