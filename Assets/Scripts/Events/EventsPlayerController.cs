@@ -30,7 +30,7 @@ public class EventsPlayerController : MonoBehaviour
     private void Start()
     {
         enemy = FindObjectOfType<EventsEnemy>().gameObject.transform; // There is a unique enemy in the Scene
-        OnEnablePlayerEvents();
+        OnEnablePlayerEvents(); // Call to activate the player events
     }
 
     public float DistanceToEnemy()
@@ -48,7 +48,7 @@ public class EventsPlayerController : MonoBehaviour
         spriteRenderer.color = originalColor;
     }
 
-    public void OnEnablePlayerEvents()
+    public void OnEnablePlayerEvents() // Subscribing functions to the events
     {
         EventsGameManager.OnEnterKeyPressed += ChangeColorToGreen;
         EventsGameManager.OnEscapeKeyPressed += ChangeColorToOriginal;

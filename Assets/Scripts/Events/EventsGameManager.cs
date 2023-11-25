@@ -4,11 +4,11 @@ public class EventsGameManager : MonoBehaviour
 {
     // HERE YOU WILL HAVE TO DECLARE AND INVOKE THE EVENTS
 
-    public delegate void Delegado1();
-    public delegate void Delegado2();
+    public delegate void EventHandler1();
+    public delegate void EventHandler2();
 
-    public static event Delegado1 OnEnterKeyPressed;
-    public static event Delegado2 OnEscapeKeyPressed;
+    public static event EventHandler1 OnEnterKeyPressed;
+    public static event EventHandler2 OnEscapeKeyPressed;
 
     private void Update()
     {

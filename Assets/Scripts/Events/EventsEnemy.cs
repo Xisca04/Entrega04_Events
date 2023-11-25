@@ -24,6 +24,8 @@ public class EventsEnemy : MonoBehaviour
     {
         canMove = true;
         nextPosition = startPosition;
+
+        // Call to activate the enemy events
         OnEnableEnemyEvents();
     }
 
@@ -68,7 +70,7 @@ public class EventsEnemy : MonoBehaviour
         canMove = true;
     }
 
-    public void OnEnableEnemyEvents()
+    public void OnEnableEnemyEvents() // Subscribing functions to events
     {
         EventsGameManager.OnEnterKeyPressed += StopMovement;
         EventsGameManager.OnEscapeKeyPressed += RestartMovement;
