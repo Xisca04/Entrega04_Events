@@ -10,9 +10,7 @@ public class EventsSFX : MonoBehaviour
 
     private void Awake()
     {
-        // Call to activate the SFX events
         StopParticleSystem();
-        OnEnableSFXEvents();
     }
 
     private void StartParticleSystem()
@@ -25,9 +23,15 @@ public class EventsSFX : MonoBehaviour
         particleSystem.Stop();
     }
 
-    public void OnEnableSFXEvents() // Subscribing functions to the events
+    private void OnEnable() // Subscribing functions to the events and activate the SFX events
     {
         EventsGameManager.OnEnterKeyPressed += StartParticleSystem;
         EventsGameManager.OnEscapeKeyPressed += StopParticleSystem;
+    }
+
+    private void OnDisable() // Unsubscrib functions to the events and deactivate the SFX events
+    {
+        EventsGameManager.OnEnterKeyPressed -= StartParticleSystem;
+        EventsGameManager.OnEscapeKeyPressed -= StopParticleSystem;
     }
 }

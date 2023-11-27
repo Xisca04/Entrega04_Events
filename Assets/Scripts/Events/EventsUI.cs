@@ -12,9 +12,7 @@ public class EventsUI : MonoBehaviour
 
     private void Awake()
     {
-        // Call to activate the UI events
         InitializeText();
-        OnEnableUIEvents();
     }
 
     private void InitializeText()
@@ -28,9 +26,15 @@ public class EventsUI : MonoBehaviour
         distanceText.text = distance.ToString("F2");
     }
 
-    public void OnEnableUIEvents() // Subscribing functions to events
+    private void OnEnable() // Subscribing functions to events and activate the UI events
     {
         EventsGameManager.OnEnterKeyPressed += UpdateText;
         EventsGameManager.OnEscapeKeyPressed += InitializeText;
+    }
+
+    private void OnDisable() // Unsuscrib functions to events and deactivate the UI events
+    {
+        EventsGameManager.OnEnterKeyPressed -= UpdateText;
+        EventsGameManager.OnEscapeKeyPressed -= InitializeText;
     }
 }

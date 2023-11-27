@@ -4,11 +4,12 @@ public class EventsGameManager : MonoBehaviour
 {
     // HERE YOU WILL HAVE TO DECLARE AND INVOKE THE EVENTS
 
-    public delegate void EventHandler1();
-    public delegate void EventHandler2();
+    public delegate void EventEnter(); // Delegate of OnEnterKeyPressed event
+    public delegate void EventEscape(); // Delegate of OnEscapeKeyPressed event
 
-    public static event EventHandler1 OnEnterKeyPressed;
-    public static event EventHandler2 OnEscapeKeyPressed;
+    // Statement of the events
+    public static event EventEnter OnEnterKeyPressed;
+    public static event EventEscape OnEscapeKeyPressed;
 
     private void Update()
     {
